@@ -21,6 +21,7 @@ import {
 import { useLanguage } from "@/components/language-provider"
 import { Search, Eye, Thermometer, Droplets, Activity, AlertTriangle, CheckCircle, Plus, Trash2 } from "lucide-react"
 import { loadFakeData } from "@/utils/fakeData"
+import { AppSidebar } from "@/components/app-sidebar"
 
 const getStatusBadge = (statut: string) => {
   switch (statut) {
@@ -85,6 +86,8 @@ export default function BassinsPage() {
   }
 
   return (
+    <>
+      <AppSidebar />
     <div className="flex-1 space-y-6 p-6">
       <div className="flex items-center justify-between">
         <div>
@@ -322,5 +325,6 @@ export default function BassinsPage() {
         </CardContent>
       </Card>
     </div>
+    </>
   )
 }

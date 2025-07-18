@@ -34,7 +34,7 @@ import { useState } from "react"
 const menuItems = [
   {
     titleKey: "nav.dashboard",
-    url: "/",
+    url: "/dashboard",
     icon: Home,
   },
   {

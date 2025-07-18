@@ -20,6 +20,7 @@ import {
 import { Label } from "@/components/ui/label"
 import { Search, Eye, AlertTriangle, AlertCircle, Info, CheckCircle, Clock } from "lucide-react"
 import { loadFakeData } from "@/utils/fakeData"
+import { AppSidebar } from "@/components/app-sidebar"
 
 export default function AlertesPage() {
   const [alertes, setAlertes] = useState<any[]>([])
@@ -91,6 +92,8 @@ export default function AlertesPage() {
   }
 
   return (
+    <>
+      <AppSidebar />
     <div className="flex-1 space-y-6 p-6">
       <div className="flex items-center justify-between">
         <div>
@@ -341,5 +344,6 @@ export default function AlertesPage() {
         </CardContent>
       </Card>
     </div>
+    </>
   )
 }

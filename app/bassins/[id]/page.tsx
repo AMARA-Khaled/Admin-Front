@@ -8,6 +8,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Line, LineChart, ResponsiveContainer, Tooltip as RechartsTooltip, XAxis, YAxis } from "recharts"
 import { ArrowLeft, Thermometer, Heart, User, Phone } from "lucide-react"
 import Link from "next/link"
+import { AppSidebar } from "@/components/app-sidebar"
 
 // Données simulées pour un bassin spécifique
 async function getBassinData(id: string) {
@@ -68,6 +69,8 @@ export default function BassinDetailPage({ params }: BassinDetailPageProps) {
   }
 
   return (
+    <>
+    <AppSidebar />
     <div className="flex-1 space-y-6 p-6">
       {/* En-tête */}
       <div className="flex items-center justify-between">
@@ -244,5 +247,6 @@ export default function BassinDetailPage({ params }: BassinDetailPageProps) {
         </CardContent>
       </Card>
     </div>
+    </>
   )
 }

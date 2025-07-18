@@ -28,7 +28,7 @@ export default function RootLayout({
           <LanguageProvider>
             <SidebarProvider>
               <div className="flex min-h-screen w-full">
-                <AppSidebar />
+                
                 <main className="flex-1 overflow-auto lg:ml-64">{children}</main>
               </div>
             </SidebarProvider>

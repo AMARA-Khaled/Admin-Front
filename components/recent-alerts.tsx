@@ -1,50 +1,25 @@
+"use client"
+import React, { useEffect, useState } from "react"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { AlertTriangle, AlertCircle, Info, Clock, ArrowRight } from "lucide-react"
+import axios from 'axios';
 
-const alerts = [
-  {
-    id: 1,
-    type: "critical",
-    title: "Température critique - B-007",
-    description: "Température dépassant 26°C",
-    time: "Il y a 5 min",
-    bassin: "B-007",
-  },
-  {
-    id: 2,
-    type: "warning",
-    title: "pH en baisse - B-003",
-    description: "pH descendu à 7.2",
-    time: "Il y a 12 min",
-    bassin: "B-003",
-  },
-  {
-    id: 3,
-    type: "info",
-    title: "Capteur reconnecté - C-024",
-    description: "Capteur oxygène opérationnel",
-    time: "Il y a 23 min",
-    bassin: "B-001",
-  },
-  {
-    id: 4,
-    type: "warning",
-    title: "Salinité élevée - B-012",
-    description: "Salinité à 36.2‰",
-    time: "Il y a 1h",
-    bassin: "B-012",
-  },
-  {
-    id: 5,
-    type: "critical",
-    title: "Capteur défaillant - C-018",
-    description: "Perte de signal capteur pH",
-    time: "Il y a 2h",
-    bassin: "B-005",
-  },
-]
+axios.get("http://localhost:8000/api/v1/alerts", {
+  headers: {
+    "Content-Type": "application/json",
+    "Authorization": `Bearer ${localStorage.getItem("access_token")}`
+  }
+})
+  .then(response => {
+    const alerts = response.data;
+  })
+  .catch(error => {
+    console.error('Error fetching data:', error);
+  });
+
+
 
 const getAlertIcon = (type: string) => {
   switch (type) {
@@ -73,10 +48,26 @@ const getAlertColor = (type: string) => {
 }
 
 export function RecentAlerts() {
+  const [alerts, setAlerts] = useState<any[]>([])
+  useEffect(() => {
+    axios.get("http://localhost:8000/api/v1/alerts", {
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${localStorage.getItem("access_token")}`
+      }
+    })
+    .then(response => {
+      const alerts = response.data;
+    })
+    .catch(error => {
+      console.error('Error fetching data:', error);
+    });
+  }, [])
+
   return (
     <ScrollArea className="h-[300px]">
       <div className="space-y-3">
-        {alerts.map((alert) => {
+        {alerts.map((alert: any) => {
           const Icon = getAlertIcon(alert.type)
           return (
             <div key={alert.id} className="flex items-start space-x-3 p-3 rounded-lg border">

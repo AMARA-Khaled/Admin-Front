@@ -8,6 +8,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Progress } from "@/components/ui/progress"
 import { Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis, Bar, BarChart } from "recharts"
 import { useLanguage } from "@/components/language-provider"
+import { AppSidebar } from "@/components/app-sidebar"
 import {
   Brain,
   TrendingUp,
@@ -128,6 +129,8 @@ export default function AIAssistantPage() {
   }
 
   return (
+    <>
+      <AppSidebar />
     <div className="flex-1 space-y-6 p-6">
       <div className="flex items-center justify-between">
         <div>
@@ -213,7 +216,7 @@ export default function AIAssistantPage() {
             <CardContent>
               <div className="grid gap-4 md:grid-cols-2">
                 {aiModels.map((model) => {
-                  const Icon = iconMap[model.icon] || Thermometer;
+                  const Icon = iconMap[model.icon as keyof typeof iconMap] || Thermometer;
                   return (
                     <Card key={model.id} className="cursor-pointer hover:shadow-md transition-shadow">
                       <CardHeader className="pb-3">
@@ -410,5 +413,6 @@ export default function AIAssistantPage() {
         </TabsContent>
       </Tabs>
     </div>
+    </>
   )
 }
