@@ -1,0 +1,12 @@
+{
+  "temperature": { "min": 22, "max": 26 },
+  "salinite": { "min": 34, "max": 36 },
+  "ph": { "min": 7.5, "max": 8.2 },
+  "oxygene": { "min": 7, "max": 10 },
+  "solidesSuspendus": { "min": 10, "max": 15 },
+  "nitrate": { "min": 5, "max": 8 },
+  "ammoniac": { "min": 0.1, "max": 0.5 },
+  "niveauEau": { "min": 85, "max": 95 },
+  "turbidite": { "min": 2, "max": 5 },
+  "chlorophylle": { "min": 15, "max": 25 }
+} 

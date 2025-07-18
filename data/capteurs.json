@@ -1,0 +1,56 @@
+[
+  {
+    "id": "C-001",
+    "type": "Température",
+    "bassin": "B-001",
+    "statut": "actif",
+    "derniereMesure": "24.5°C",
+    "derniereConnexion": "2024-01-15 15:30",
+    "precision": "±0.1°C"
+  },
+  {
+    "id": "C-002",
+    "type": "Salinité",
+    "bassin": "B-001",
+    "statut": "actif",
+    "derniereMesure": "35.2‰",
+    "derniereConnexion": "2024-01-15 15:29",
+    "precision": "±0.1‰"
+  },
+  {
+    "id": "C-003",
+    "type": "pH",
+    "bassin": "B-002",
+    "statut": "critique",
+    "derniereMesure": "7.2",
+    "derniereConnexion": "2024-01-15 14:45",
+    "precision": "±0.05"
+  },
+  {
+    "id": "C-004",
+    "type": "Oxygène",
+    "bassin": "B-001",
+    "statut": "actif",
+    "derniereMesure": "8.1 mg/L",
+    "derniereConnexion": "2024-01-15 15:31",
+    "precision": "±0.1 mg/L"
+  },
+  {
+    "id": "C-005",
+    "type": "Température",
+    "bassin": "B-003",
+    "statut": "deconnecte",
+    "derniereMesure": "25.1°C",
+    "derniereConnexion": "2024-01-15 12:15",
+    "precision": "±0.1°C"
+  },
+  {
+    "id": "C-006",
+    "type": "pH",
+    "bassin": "B-003",
+    "statut": "actif",
+    "derniereMesure": "7.8",
+    "derniereConnexion": "2024-01-15 15:28",
+    "precision": "±0.05"
+  }
+] 

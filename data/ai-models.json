@@ -1,0 +1,44 @@
+{
+  "aiModels": [
+    {
+      "id": "temp-model-v2",
+      "name": "Modèle Température v2.1",
+      "type": "temperature",
+      "accuracy": 94.2,
+      "confidence": 87.5,
+      "lastTraining": "2024-01-14",
+      "predictions": 156,
+      "status": "active"
+    },
+    {
+      "id": "sal-model-v1",
+      "name": "Modèle Salinité v1.8",
+      "type": "salinity",
+      "accuracy": 91.8,
+      "confidence": 82.3,
+      "lastTraining": "2024-01-13",
+      "predictions": 142,
+      "status": "active"
+    },
+    {
+      "id": "ph-model-v3",
+      "name": "Modèle pH v3.0",
+      "type": "ph",
+      "accuracy": 96.1,
+      "confidence": 91.2,
+      "lastTraining": "2024-01-15",
+      "predictions": 189,
+      "status": "active"
+    },
+    {
+      "id": "o2-model-v1",
+      "name": "Modèle Oxygène v1.5",
+      "type": "oxygen",
+      "accuracy": 88.7,
+      "confidence": 79.4,
+      "lastTraining": "2024-01-12",
+      "predictions": 98,
+      "status": "training"
+    }
+  ]
+} 

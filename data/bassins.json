@@ -1,0 +1,212 @@
+[
+  {
+    "id": "B-001",
+    "ferme": "Principal A",
+    "statut": "actif",
+    "nombrePoissons": 1250,
+    "parametres": {
+      "temperature": { "valeur": 24.5, "seuil": { "min": 22, "max": 26 }, "unite": "°C" },
+      "salinite": { "valeur": 35.2, "seuil": { "min": 34, "max": 36 }, "unite": "‰" },
+      "ph": { "valeur": 7.9, "seuil": { "min": 7.5, "max": 8.2 }, "unite": "" },
+      "oxygene": { "valeur": 8.1, "seuil": { "min": 7, "max": 10 }, "unite": "mg/L" },
+      "solidesSuspendus": { "valeur": 12.5, "seuil": { "min": 10, "max": 15 }, "unite": "mg/L" },
+      "nitrate": { "valeur": 6.2, "seuil": { "min": 5, "max": 8 }, "unite": "mg/L" },
+      "ammoniac": { "valeur": 0.25, "seuil": { "min": 0.1, "max": 0.5 }, "unite": "mg/L" },
+      "niveauEau": { "valeur": 92.5, "seuil": { "min": 85, "max": 95 }, "unite": "%" },
+      "turbidite": { "valeur": 3.2, "seuil": { "min": 2, "max": 5 }, "unite": "NTU" },
+      "chlorophylle": { "valeur": 18.5, "seuil": { "min": 15, "max": 25 }, "unite": "μg/L" }
+    },
+    "historique": [
+      { "date": "Jan 10", "temperature": 24.2, "salinite": 35.1, "ph": 7.8, "oxygene": 8.0, "solidesSuspendus": 12.3, "nitrate": 6.1, "ammoniac": 0.24, "niveauEau": 92.8, "turbidite": 3.1, "chlorophylle": 18.3 },
+      { "date": "Jan 09", "temperature": 24.3, "salinite": 35.0, "ph": 7.9, "oxygene": 8.1, "solidesSuspendus": 12.4, "nitrate": 6.2, "ammoniac": 0.25, "niveauEau": 92.7, "turbidite": 3.2, "chlorophylle": 18.4 },
+      { "date": "Jan 08", "temperature": 24.4, "salinite": 35.1, "ph": 7.8, "oxygene": 8.0, "solidesSuspendus": 12.5, "nitrate": 6.1, "ammoniac": 0.24, "niveauEau": 92.6, "turbidite": 3.1, "chlorophylle": 18.3 },
+      { "date": "Jan 07", "temperature": 24.5, "salinite": 35.2, "ph": 7.9, "oxygene": 8.1, "solidesSuspendus": 12.6, "nitrate": 6.2, "ammoniac": 0.25, "niveauEau": 92.7, "turbidite": 3.2, "chlorophylle": 18.4 },
+      { "date": "Jan 06", "temperature": 24.6, "salinite": 35.3, "ph": 7.8, "oxygene": 8.0, "solidesSuspendus": 12.7, "nitrate": 6.1, "ammoniac": 0.24, "niveauEau": 92.6, "turbidite": 3.1, "chlorophylle": 18.3 },
+      { "date": "Jan 05", "temperature": 24.7, "salinite": 35.4, "ph": 7.9, "oxygene": 8.1, "solidesSuspendus": 12.8, "nitrate": 6.2, "ammoniac": 0.25, "niveauEau": 92.7, "turbidite": 3.2, "chlorophylle": 18.4 },
+      { "date": "Jan 04", "temperature": 24.8, "salinite": 35.5, "ph": 7.8, "oxygene": 8.0, "solidesSuspendus": 12.9, "nitrate": 6.1, "ammoniac": 0.24, "niveauEau": 92.6, "turbidite": 3.1, "chlorophylle": 18.3 },
+      { "date": "Jan 03", "temperature": 24.9, "salinite": 35.6, "ph": 7.9, "oxygene": 8.1, "solidesSuspendus": 13.0, "nitrate": 6.2, "ammoniac": 0.25, "niveauEau": 92.7, "turbidite": 3.2, "chlorophylle": 18.4 },
+      { "date": "Jan 02", "temperature": 25.0, "salinite": 35.7, "ph": 7.8, "oxygene": 8.0, "solidesSuspendus": 13.1, "nitrate": 6.1, "ammoniac": 0.24, "niveauEau": 92.6, "turbidite": 3.1, "chlorophylle": 18.3 },
+      { "date": "Jan 01", "temperature": 25.1, "salinite": 35.8, "ph": 7.9, "oxygene": 8.1, "solidesSuspendus": 13.2, "nitrate": 6.2, "ammoniac": 0.25, "niveauEau": 92.7, "turbidite": 3.2, "chlorophylle": 18.4 }
+    ],
+    "capteurs": [
+      { "id": "C-001", "type": "Température", "statut": "actif" },
+      { "id": "C-002", "type": "Salinité", "statut": "actif" },
+      { "id": "C-003", "type": "pH", "statut": "actif" },
+      { "id": "C-004", "type": "Oxygène", "statut": "actif" }
+    ],
+    "responsable": {
+      "nom": "Dr. Ahmed Mansouri",
+      "contact": "+216 98 123 456"
+    },
+    "alertes": 0,
+    "location": { "lat": 36.715, "lng": 3.183 }
+  },
+  {
+    "id": "B-002",
+    "ferme": "Nurserie B",
+    "statut": "actif",
+    "nombrePoissons": 1100,
+    "parametres": {
+      "temperature": { "valeur": 23.8, "seuil": { "min": 22, "max": 26 }, "unite": "°C" },
+      "salinite": { "valeur": 34.9, "seuil": { "min": 34, "max": 36 }, "unite": "‰" },
+      "ph": { "valeur": 7.7, "seuil": { "min": 7.5, "max": 8.2 }, "unite": "" },
+      "oxygene": { "valeur": 8.3, "seuil": { "min": 7, "max": 10 }, "unite": "mg/L" },
+      "solidesSuspendus": { "valeur": 11.2, "seuil": { "min": 10, "max": 15 }, "unite": "mg/L" },
+      "nitrate": { "valeur": 5.8, "seuil": { "min": 5, "max": 8 }, "unite": "mg/L" },
+      "ammoniac": { "valeur": 0.18, "seuil": { "min": 0.1, "max": 0.5 }, "unite": "mg/L" },
+      "niveauEau": { "valeur": 90.0, "seuil": { "min": 85, "max": 95 }, "unite": "%" },
+      "turbidite": { "valeur": 2.8, "seuil": { "min": 2, "max": 5 }, "unite": "NTU" },
+      "chlorophylle": { "valeur": 16.0, "seuil": { "min": 15, "max": 25 }, "unite": "μg/L" }
+    },
+    "historique": [
+      { "date": "Jan 10", "temperature": 23.7, "salinite": 34.8, "ph": 7.6, "oxygene": 8.2, "solidesSuspendus": 11.1, "nitrate": 5.7, "ammoniac": 0.17, "niveauEau": 89.9, "turbidite": 2.7, "chlorophylle": 15.9 },
+      { "date": "Jan 09", "temperature": 23.8, "salinite": 34.9, "ph": 7.7, "oxygene": 8.3, "solidesSuspendus": 11.2, "nitrate": 5.8, "ammoniac": 0.18, "niveauEau": 90.0, "turbidite": 2.8, "chlorophylle": 16.0 },
+      { "date": "Jan 08", "temperature": 23.9, "salinite": 35.0, "ph": 7.6, "oxygene": 8.2, "solidesSuspendus": 11.1, "nitrate": 5.7, "ammoniac": 0.17, "niveauEau": 89.9, "turbidite": 2.7, "chlorophylle": 15.9 },
+      { "date": "Jan 07", "temperature": 24.0, "salinite": 35.1, "ph": 7.7, "oxygene": 8.3, "solidesSuspendus": 11.2, "nitrate": 5.8, "ammoniac": 0.18, "niveauEau": 90.0, "turbidite": 2.8, "chlorophylle": 16.0 },
+      { "date": "Jan 06", "temperature": 24.1, "salinite": 35.2, "ph": 7.6, "oxygene": 8.2, "solidesSuspendus": 11.1, "nitrate": 5.7, "ammoniac": 0.17, "niveauEau": 89.9, "turbidite": 2.7, "chlorophylle": 15.9 },
+      { "date": "Jan 05", "temperature": 24.2, "salinite": 35.3, "ph": 7.7, "oxygene": 8.3, "solidesSuspendus": 11.2, "nitrate": 5.8, "ammoniac": 0.18, "niveauEau": 90.0, "turbidite": 2.8, "chlorophylle": 16.0 },
+      { "date": "Jan 04", "temperature": 24.3, "salinite": 35.4, "ph": 7.6, "oxygene": 8.2, "solidesSuspendus": 11.1, "nitrate": 5.7, "ammoniac": 0.17, "niveauEau": 89.9, "turbidite": 2.7, "chlorophylle": 15.9 },
+      { "date": "Jan 03", "temperature": 24.4, "salinite": 35.5, "ph": 7.7, "oxygene": 8.3, "solidesSuspendus": 11.2, "nitrate": 5.8, "ammoniac": 0.18, "niveauEau": 90.0, "turbidite": 2.8, "chlorophylle": 16.0 },
+      { "date": "Jan 02", "temperature": 24.5, "salinite": 35.6, "ph": 7.6, "oxygene": 8.2, "solidesSuspendus": 11.1, "nitrate": 5.7, "ammoniac": 0.17, "niveauEau": 89.9, "turbidite": 2.7, "chlorophylle": 15.9 },
+      { "date": "Jan 01", "temperature": 24.6, "salinite": 35.7, "ph": 7.7, "oxygene": 8.3, "solidesSuspendus": 11.2, "nitrate": 5.8, "ammoniac": 0.18, "niveauEau": 90.0, "turbidite": 2.8, "chlorophylle": 16.0 }
+    ],
+    "capteurs": [
+      { "id": "C-005", "type": "Température", "statut": "actif" },
+      { "id": "C-006", "type": "Salinité", "statut": "actif" },
+      { "id": "C-007", "type": "pH", "statut": "actif" },
+      { "id": "C-008", "type": "Oxygène", "statut": "actif" }
+    ],
+    "responsable": {
+      "nom": "Dr. Leila Ben Youssef",
+      "contact": "+216 97 234 567"
+    },
+    "alertes": 0,
+    "location": { "lat": 36.715, "lng": 3.185 }
+  },
+  {
+    "id": "B-003",
+    "ferme": "Croissance C",
+    "statut": "alerte",
+    "nombrePoissons": 980,
+    "parametres": {
+      "temperature": { "valeur": 25.2, "seuil": { "min": 22, "max": 26 }, "unite": "°C" },
+      "salinite": { "valeur": 34.5, "seuil": { "min": 34, "max": 36 }, "unite": "‰" },
+      "ph": { "valeur": 7.2, "seuil": { "min": 7.5, "max": 8.2 }, "unite": "" },
+      "oxygene": { "valeur": 7.8, "seuil": { "min": 7, "max": 10 }, "unite": "mg/L" },
+      "solidesSuspendus": { "valeur": 13.0, "seuil": { "min": 10, "max": 15 }, "unite": "mg/L" },
+      "nitrate": { "valeur": 6.5, "seuil": { "min": 5, "max": 8 }, "unite": "mg/L" },
+      "ammoniac": { "valeur": 0.22, "seuil": { "min": 0.1, "max": 0.5 }, "unite": "mg/L" },
+      "niveauEau": { "valeur": 88.0, "seuil": { "min": 85, "max": 95 }, "unite": "%" },
+      "turbidite": { "valeur": 3.5, "seuil": { "min": 2, "max": 5 }, "unite": "NTU" },
+      "chlorophylle": { "valeur": 19.2, "seuil": { "min": 15, "max": 25 }, "unite": "μg/L" }
+    },
+    "historique": [
+      { "date": "Jan 10", "temperature": 25.1, "salinite": 34.4, "ph": 7.1, "oxygene": 7.7, "solidesSuspendus": 12.9, "nitrate": 6.4, "ammoniac": 0.21, "niveauEau": 87.9, "turbidite": 3.4, "chlorophylle": 19.1 },
+      { "date": "Jan 09", "temperature": 25.2, "salinite": 34.5, "ph": 7.2, "oxygene": 7.8, "solidesSuspendus": 13.0, "nitrate": 6.5, "ammoniac": 0.22, "niveauEau": 88.0, "turbidite": 3.5, "chlorophylle": 19.2 },
+      { "date": "Jan 08", "temperature": 25.3, "salinite": 34.6, "ph": 7.1, "oxygene": 7.7, "solidesSuspendus": 12.9, "nitrate": 6.4, "ammoniac": 0.21, "niveauEau": 87.9, "turbidite": 3.4, "chlorophylle": 19.1 },
+      { "date": "Jan 07", "temperature": 25.4, "salinite": 34.7, "ph": 7.2, "oxygene": 7.8, "solidesSuspendus": 13.0, "nitrate": 6.5, "ammoniac": 0.22, "niveauEau": 88.0, "turbidite": 3.5, "chlorophylle": 19.2 },
+      { "date": "Jan 06", "temperature": 25.5, "salinite": 34.8, "ph": 7.1, "oxygene": 7.7, "solidesSuspendus": 12.9, "nitrate": 6.4, "ammoniac": 0.21, "niveauEau": 87.9, "turbidite": 3.4, "chlorophylle": 19.1 },
+      { "date": "Jan 05", "temperature": 25.6, "salinite": 34.9, "ph": 7.2, "oxygene": 7.8, "solidesSuspendus": 13.0, "nitrate": 6.5, "ammoniac": 0.22, "niveauEau": 88.0, "turbidite": 3.5, "chlorophylle": 19.2 },
+      { "date": "Jan 04", "temperature": 25.7, "salinite": 35.0, "ph": 7.1, "oxygene": 7.7, "solidesSuspendus": 12.9, "nitrate": 6.4, "ammoniac": 0.21, "niveauEau": 87.9, "turbidite": 3.4, "chlorophylle": 19.1 },
+      { "date": "Jan 03", "temperature": 25.8, "salinite": 35.1, "ph": 7.2, "oxygene": 7.8, "solidesSuspendus": 13.0, "nitrate": 6.5, "ammoniac": 0.22, "niveauEau": 88.0, "turbidite": 3.5, "chlorophylle": 19.2 },
+      { "date": "Jan 02", "temperature": 25.9, "salinite": 35.2, "ph": 7.1, "oxygene": 7.7, "solidesSuspendus": 12.9, "nitrate": 6.4, "ammoniac": 0.21, "niveauEau": 87.9, "turbidite": 3.4, "chlorophylle": 19.1 },
+      { "date": "Jan 01", "temperature": 26.0, "salinite": 35.3, "ph": 7.2, "oxygene": 7.8, "solidesSuspendus": 13.0, "nitrate": 6.5, "ammoniac": 0.22, "niveauEau": 88.0, "turbidite": 3.5, "chlorophylle": 19.2 }
+    ],
+    "capteurs": [
+      { "id": "C-009", "type": "Température", "statut": "actif" },
+      { "id": "C-010", "type": "Salinité", "statut": "actif" },
+      { "id": "C-011", "type": "pH", "statut": "actif" },
+      { "id": "C-012", "type": "Oxygène", "statut": "actif" }
+    ],
+    "responsable": {
+      "nom": "Dr. Sami Trabelsi",
+      "contact": "+216 96 345 678"
+    },
+    "alertes": 2,
+    "location": { "lat": 36.716, "lng": 3.187 }
+  },
+  {
+    "id": "B-004",
+    "ferme": "Quarantaine D",
+    "statut": "maintenance",
+    "nombrePoissons": 700,
+    "parametres": {
+      "temperature": { "valeur": 22.1, "seuil": { "min": 22, "max": 26 }, "unite": "°C" },
+      "salinite": { "valeur": 35.0, "seuil": { "min": 34, "max": 36 }, "unite": "‰" },
+      "ph": { "valeur": 7.8, "seuil": { "min": 7.5, "max": 8.2 }, "unite": "" },
+      "oxygene": { "valeur": 8.0, "seuil": { "min": 7, "max": 10 }, "unite": "mg/L" },
+      "solidesSuspendus": { "valeur": 12.0, "seuil": { "min": 10, "max": 15 }, "unite": "mg/L" },
+      "nitrate": { "valeur": 5.9, "seuil": { "min": 5, "max": 8 }, "unite": "mg/L" },
+      "ammoniac": { "valeur": 0.19, "seuil": { "min": 0.1, "max": 0.5 }, "unite": "mg/L" },
+      "niveauEau": { "valeur": 91.0, "seuil": { "min": 85, "max": 95 }, "unite": "%" },
+      "turbidite": { "valeur": 2.5, "seuil": { "min": 2, "max": 5 }, "unite": "NTU" },
+      "chlorophylle": { "valeur": 17.8, "seuil": { "min": 15, "max": 25 }, "unite": "μg/L" }
+    },
+    "historique": [
+      { "date": "Jan 10", "temperature": 22.0, "salinite": 34.9, "ph": 7.7, "oxygene": 7.9, "solidesSuspendus": 11.9, "nitrate": 5.8, "ammoniac": 0.18, "niveauEau": 90.9, "turbidite": 2.4, "chlorophylle": 17.7 },
+      { "date": "Jan 09", "temperature": 22.1, "salinite": 35.0, "ph": 7.8, "oxygene": 8.0, "solidesSuspendus": 12.0, "nitrate": 5.9, "ammoniac": 0.19, "niveauEau": 91.0, "turbidite": 2.5, "chlorophylle": 17.8 },
+      { "date": "Jan 08", "temperature": 22.2, "salinite": 35.1, "ph": 7.7, "oxygene": 7.9, "solidesSuspendus": 11.9, "nitrate": 5.8, "ammoniac": 0.18, "niveauEau": 90.9, "turbidite": 2.4, "chlorophylle": 17.7 },
+      { "date": "Jan 07", "temperature": 22.3, "salinite": 35.2, "ph": 7.8, "oxygene": 8.0, "solidesSuspendus": 12.0, "nitrate": 5.9, "ammoniac": 0.19, "niveauEau": 91.0, "turbidite": 2.5, "chlorophylle": 17.8 },
+      { "date": "Jan 06", "temperature": 22.4, "salinite": 35.3, "ph": 7.7, "oxygene": 7.9, "solidesSuspendus": 11.9, "nitrate": 5.8, "ammoniac": 0.18, "niveauEau": 90.9, "turbidite": 2.4, "chlorophylle": 17.7 },
+      { "date": "Jan 05", "temperature": 22.5, "salinite": 35.4, "ph": 7.8, "oxygene": 8.0, "solidesSuspendus": 12.0, "nitrate": 5.9, "ammoniac": 0.19, "niveauEau": 91.0, "turbidite": 2.5, "chlorophylle": 17.8 },
+      { "date": "Jan 04", "temperature": 22.6, "salinite": 35.5, "ph": 7.7, "oxygene": 7.9, "solidesSuspendus": 11.9, "nitrate": 5.8, "ammoniac": 0.18, "niveauEau": 90.9, "turbidite": 2.4, "chlorophylle": 17.7 },
+      { "date": "Jan 03", "temperature": 22.7, "salinite": 35.6, "ph": 7.8, "oxygene": 8.0, "solidesSuspendus": 12.0, "nitrate": 5.9, "ammoniac": 0.19, "niveauEau": 91.0, "turbidite": 2.5, "chlorophylle": 17.8 },
+      { "date": "Jan 02", "temperature": 22.8, "salinite": 35.7, "ph": 7.7, "oxygene": 7.9, "solidesSuspendus": 11.9, "nitrate": 5.8, "ammoniac": 0.18, "niveauEau": 90.9, "turbidite": 2.4, "chlorophylle": 17.7 },
+      { "date": "Jan 01", "temperature": 22.9, "salinite": 35.8, "ph": 7.8, "oxygene": 8.0, "solidesSuspendus": 12.0, "nitrate": 5.9, "ammoniac": 0.19, "niveauEau": 91.0, "turbidite": 2.5, "chlorophylle": 17.8 }
+    ],
+    "capteurs": [
+      { "id": "C-013", "type": "Température", "statut": "actif" },
+      { "id": "C-014", "type": "Salinité", "statut": "actif" },
+      { "id": "C-015", "type": "pH", "statut": "actif" },
+      { "id": "C-016", "type": "Oxygène", "statut": "actif" }
+    ],
+    "responsable": {
+      "nom": "Dr. Leila Mansouri",
+      "contact": "+216 95 456 789"
+    },
+    "alertes": 0,
+    "location": { "lat": 36.716, "lng": 3.180 }
+  },
+  {
+    "id": "B-005",
+    "ferme": "Reproduction E",
+    "statut": "actif",
+    "nombrePoissons": 1350,
+    "parametres": {
+      "temperature": { "valeur": 24.0, "seuil": { "min": 22, "max": 26 }, "unite": "°C" },
+      "salinite": { "valeur": 35.1, "seuil": { "min": 34, "max": 36 }, "unite": "‰" },
+      "ph": { "valeur": 8.0, "seuil": { "min": 7.5, "max": 8.2 }, "unite": "" },
+      "oxygene": { "valeur": 8.4, "seuil": { "min": 7, "max": 10 }, "unite": "mg/L" },
+      "solidesSuspendus": { "valeur": 14.1, "seuil": { "min": 10, "max": 15 }, "unite": "mg/L" },
+      "nitrate": { "valeur": 6.7, "seuil": { "min": 5, "max": 8 }, "unite": "mg/L" },
+      "ammoniac": { "valeur": 0.21, "seuil": { "min": 0.1, "max": 0.5 }, "unite": "mg/L" },
+      "niveauEau": { "valeur": 93.0, "seuil": { "min": 85, "max": 95 }, "unite": "%" },
+      "turbidite": { "valeur": 3.0, "seuil": { "min": 2, "max": 5 }, "unite": "NTU" },
+      "chlorophylle": { "valeur": 18.9, "seuil": { "min": 15, "max": 25 }, "unite": "μg/L" }
+    },
+    "historique": [
+      { "date": "Jan 10", "temperature": 23.9, "salinite": 35.0, "ph": 7.9, "oxygene": 8.3, "solidesSuspendus": 14.0, "nitrate": 6.6, "ammoniac": 0.20, "niveauEau": 92.9, "turbidite": 2.9, "chlorophylle": 18.8 },
+      { "date": "Jan 09", "temperature": 24.0, "salinite": 35.1, "ph": 8.0, "oxygene": 8.4, "solidesSuspendus": 14.1, "nitrate": 6.7, "ammoniac": 0.21, "niveauEau": 93.0, "turbidite": 3.0, "chlorophylle": 18.9 },
+      { "date": "Jan 08", "temperature": 24.1, "salinite": 35.2, "ph": 7.9, "oxygene": 8.3, "solidesSuspendus": 14.0, "nitrate": 6.6, "ammoniac": 0.20, "niveauEau": 92.9, "turbidite": 2.9, "chlorophylle": 18.8 },
+      { "date": "Jan 07", "temperature": 24.2, "salinite": 35.3, "ph": 8.0, "oxygene": 8.4, "solidesSuspendus": 14.1, "nitrate": 6.7, "ammoniac": 0.21, "niveauEau": 93.0, "turbidite": 3.0, "chlorophylle": 18.9 },
+      { "date": "Jan 06", "temperature": 24.3, "salinite": 35.4, "ph": 7.9, "oxygene": 8.3, "solidesSuspendus": 14.0, "nitrate": 6.6, "ammoniac": 0.20, "niveauEau": 92.9, "turbidite": 2.9, "chlorophylle": 18.8 },
+      { "date": "Jan 05", "temperature": 24.4, "salinite": 35.5, "ph": 8.0, "oxygene": 8.4, "solidesSuspendus": 14.1, "nitrate": 6.7, "ammoniac": 0.21, "niveauEau": 93.0, "turbidite": 3.0, "chlorophylle": 18.9 },
+      { "date": "Jan 04", "temperature": 24.5, "salinite": 35.6, "ph": 7.9, "oxygene": 8.3, "solidesSuspendus": 14.0, "nitrate": 6.6, "ammoniac": 0.20, "niveauEau": 92.9, "turbidite": 2.9, "chlorophylle": 18.8 },
+      { "date": "Jan 03", "temperature": 24.6, "salinite": 35.7, "ph": 8.0, "oxygene": 8.4, "solidesSuspendus": 14.1, "nitrate": 6.7, "ammoniac": 0.21, "niveauEau": 93.0, "turbidite": 3.0, "chlorophylle": 18.9 },
+      { "date": "Jan 02", "temperature": 24.7, "salinite": 35.8, "ph": 7.9, "oxygene": 8.3, "solidesSuspendus": 14.0, "nitrate": 6.6, "ammoniac": 0.20, "niveauEau": 92.9, "turbidite": 2.9, "chlorophylle": 18.8 },
+      { "date": "Jan 01", "temperature": 24.8, "salinite": 35.9, "ph": 8.0, "oxygene": 8.4, "solidesSuspendus": 14.1, "nitrate": 6.7, "ammoniac": 0.21, "niveauEau": 93.0, "turbidite": 3.0, "chlorophylle": 18.9 }
+    ],
+    "capteurs": [
+      { "id": "C-017", "type": "Température", "statut": "actif" },
+      { "id": "C-018", "type": "Salinité", "statut": "actif" },
+      { "id": "C-019", "type": "pH", "statut": "actif" },
+      { "id": "C-020", "type": "Oxygène", "statut": "actif" }
+    ],
+    "responsable": {
+      "nom": "Dr. Youssef Khelifi",
+      "contact": "+216 94 567 890"
+    },
+    "alertes": 0,
+    "location": { "lat": 36.720, "lng": 3.190 }
+  }
+] 

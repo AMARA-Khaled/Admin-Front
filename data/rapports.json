@@ -1,0 +1,83 @@
+{
+  "rapports": [
+    {
+      "id": "RPT-001",
+      "nom": "Rapport mensuel - Janvier 2024",
+      "type": "mensuel",
+      "dateCreation": "2024-01-31",
+      "dateDebut": "2024-01-01",
+      "dateFin": "2024-01-31",
+      "statut": "genere",
+      "taille": "2.4 MB",
+      "pages": 15,
+      "bassins": ["B-001", "B-002", "B-003"],
+      "capteurs": ["Température", "pH", "Salinité"],
+      "incluIA": true,
+      "creePar": "Admin"
+    },
+    {
+      "id": "RPT-002",
+      "nom": "Analyse performance Q4 2023",
+      "type": "trimestriel",
+      "dateCreation": "2024-01-05",
+      "dateDebut": "2023-10-01",
+      "dateFin": "2023-12-31",
+      "statut": "genere",
+      "taille": "5.8 MB",
+      "pages": 32,
+      "bassins": ["B-001", "B-002", "B-003", "B-004", "B-005"],
+      "capteurs": ["Température", "pH", "Salinité", "Oxygène"],
+      "incluIA": true,
+      "creePar": "Admin"
+    },
+    {
+      "id": "RPT-003",
+      "nom": "Rapport incident - Bassin B-007",
+      "type": "incident",
+      "dateCreation": "2024-01-15",
+      "dateDebut": "2024-01-14",
+      "dateFin": "2024-01-15",
+      "statut": "en_cours",
+      "taille": "-",
+      "pages": 0,
+      "bassins": ["B-007"],
+      "capteurs": ["Température"],
+      "incluIA": false,
+      "creePar": "Technicien"
+    }
+  ],
+  "rapportsEnvoyes": [
+    {
+      "id": "RPT-001",
+      "nom": "Rapport mensuel - Janvier 2024",
+      "dateEnvoi": "2024-01-31 16:30",
+      "destinataires": ["directeur@aquafarm.com", "manager@aquafarm.com"],
+      "statut": "envoye",
+      "taille": "2.4 MB"
+    },
+    {
+      "id": "RPT-002",
+      "nom": "Analyse performance Q4 2023",
+      "dateEnvoi": "2024-01-05 09:15",
+      "destinataires": ["board@aquafarm.com", "investors@aquafarm.com"],
+      "statut": "envoye",
+      "taille": "5.8 MB"
+    },
+    {
+      "id": "RPT-004",
+      "nom": "Rapport hebdomadaire - Semaine 2",
+      "dateEnvoi": "2024-01-14 18:00",
+      "destinataires": ["team@aquafarm.com"],
+      "statut": "en_attente",
+      "taille": "1.2 MB"
+    },
+    {
+      "id": "RPT-005",
+      "nom": "Alerte critique - Bassin B-003",
+      "dateEnvoi": "2024-01-13 14:22",
+      "destinataires": ["urgence@aquafarm.com"],
+      "statut": "echec",
+      "taille": "0.8 MB"
+    }
+  ]
+} 

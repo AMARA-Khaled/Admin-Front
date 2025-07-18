@@ -1,0 +1,72 @@
+[
+  {
+    "id": "A-001",
+    "type": "critique",
+    "titre": "Température critique - B-007",
+    "description": "La température du bassin B-007 a dépassé le seuil critique de 26°C (mesure: 26.8°C)",
+    "bassin": "B-007",
+    "capteur": "C-015",
+    "timestamp": "2024-01-15 14:30:25",
+    "statut": "active",
+    "gravite": "critique",
+    "suggestion": "Activer immédiatement le système de refroidissement et vérifier la circulation d'eau",
+    "commentaire": "",
+    "traitePar": null
+  },
+  {
+    "id": "A-002",
+    "type": "warning",
+    "titre": "pH en baisse - B-003",
+    "description": "Le pH du bassin B-003 est descendu à 7.2, en dessous du seuil recommandé de 7.5",
+    "bassin": "B-003",
+    "capteur": "C-008",
+    "timestamp": "2024-01-15 13:45:12",
+    "statut": "en_cours",
+    "gravite": "moyenne",
+    "suggestion": "Ajouter du bicarbonate de sodium pour stabiliser le pH",
+    "commentaire": "Traitement en cours - ajout de bicarbonate programmé",
+    "traitePar": "Admin"
+  },
+  {
+    "id": "A-003",
+    "type": "info",
+    "titre": "Capteur reconnecté - C-024",
+    "description": "Le capteur d'oxygène C-024 s'est reconnecté après une perte de signal de 15 minutes",
+    "bassin": "B-001",
+    "capteur": "C-024",
+    "timestamp": "2024-01-15 12:30:45",
+    "statut": "resolu",
+    "gravite": "faible",
+    "suggestion": "Aucune action requise - surveillance continue recommandée",
+    "commentaire": "Reconnexion automatique réussie",
+    "traitePar": "Système"
+  },
+  {
+    "id": "A-004",
+    "type": "warning",
+    "titre": "Salinité élevée - B-012",
+    "description": "La salinité du bassin B-012 a atteint 36.2‰, dépassant légèrement la limite de 36‰",
+    "bassin": "B-012",
+    "capteur": "C-032",
+    "timestamp": "2024-01-15 11:15:30",
+    "statut": "active",
+    "gravite": "moyenne",
+    "suggestion": "Diluer avec de l'eau douce ou vérifier les apports en sel",
+    "commentaire": "",
+    "traitePar": null
+  },
+  {
+    "id": "A-005",
+    "type": "critique",
+    "titre": "Capteur défaillant - C-018",
+    "description": "Perte totale de signal du capteur pH C-018 depuis plus de 2 heures",
+    "bassin": "B-005",
+    "capteur": "C-018",
+    "timestamp": "2024-01-15 10:00:15",
+    "statut": "active",
+    "gravite": "critique",
+    "suggestion": "Remplacer le capteur immédiatement et effectuer une mesure manuelle du pH",
+    "commentaire": "",
+    "traitePar": null
+  }
+] 
