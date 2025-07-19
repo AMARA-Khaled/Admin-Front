@@ -24,6 +24,7 @@ import {
 } from "@/components/ui/dialog"
 import { useLanguage } from "@/components/language-provider"
 import { Settings, Users, Bell, Plus, Edit, Key } from "lucide-react"
+import { AppSidebar } from "@/components/app-sidebar"
 
 // Données simulées des utilisateurs
 const utilisateurs = [
@@ -98,6 +99,8 @@ export default function ParametresPage() {
   const [showNewUserDialog, setShowNewUserDialog] = useState(false)
 
   return (
+    <>
+    <AppSidebar />
     <div className="flex-1 space-y-6 p-6">
       <div className="flex items-center justify-between">
         <div>
@@ -543,5 +546,6 @@ export default function ParametresPage() {
         </TabsContent>
       </Tabs>
     </div>
+    </>
   )
 }

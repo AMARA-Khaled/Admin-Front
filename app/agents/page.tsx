@@ -19,10 +19,12 @@ import {
 } from "@/components/ui/dialog"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
+import { Alert, AlertDescription } from "@/components/ui/alert"
 import { useLanguage } from "@/components/language-provider"
-import { Search, Plus, Users, UserCheck, WifiOff, MapPin, Phone, Mail, UserPlus } from "lucide-react"
+import { Search, Plus, Users, UserCheck, WifiOff, MapPin, Phone, Mail, UserPlus, Loader2 } from "lucide-react"
 import { loadFakeData } from "@/utils/fakeData"
 import { AppSidebar } from "@/components/app-sidebar"
+import axios from "axios"
 
 const getStatusBadge = (statut: string) => {
   switch (statut) {
@@ -55,6 +57,23 @@ const getStatusBadge = (statut: string) => {
 export default function AgentsPage() {
   const { t } = useLanguage()
   const [agents, setAgents] = useState<any[]>([])
+  const [showNewAgentDialog, setShowNewAgentDialog] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState("")
+  const [success, setSuccess] = useState("")
+  
+  // New agent form state
+  const [newAgent, setNewAgent] = useState({
+    username: "",
+    email: "",
+    first_name: "",
+    last_name: "",
+    phone_number: "",
+    organization: "",
+    language: "fr",
+    password: ""
+  })
+
   useEffect(() => {
     loadFakeData<any[]>("agents.json").then(setAgents)
   }, [])
@@ -74,6 +93,54 @@ export default function AgentsPage() {
     return matchesSearch && matchesStatus && matchesZone
   })
 
+  const handleCreateAgent = async () => {
+    setLoading(true)
+    setError("")
+    setSuccess("")
+    
+    try {
+      const response = await axios.post("http://localhost/api/v1/auth/register", newAgent)
+      
+      // Add the new agent to the local state
+      const createdAgent = response.data
+      setAgents(prev => [...prev, {
+        id: createdAgent.id.toString(),
+        nom: `${createdAgent.first_name} ${createdAgent.last_name}`,
+        email: createdAgent.email,
+        telephone: createdAgent.phone_number,
+        statut: "disponible",
+        zone: "À assigner",
+        specialite: "Nouveau",
+        missionActuelle: null,
+        avatar: null
+      }])
+      
+      setSuccess("Agent créé avec succès!")
+      setShowNewAgentDialog(false)
+      setNewAgent({
+        username: "",
+        email: "",
+        first_name: "",
+        last_name: "",
+        phone_number: "",
+        organization: "",
+        language: "fr",
+        password: ""
+      })
+    } catch (err: any) {
+      setError(err.response?.data?.detail || "Erreur lors de la création de l'agent")
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  const handleInputChange = (field: string, value: string) => {
+    setNewAgent(prev => ({
+      ...prev,
+      [field]: value
+    }))
+  }
+
   return (
     <>
       <AppSidebar />
@@ -83,10 +150,146 @@ export default function AgentsPage() {
           <h1 className="text-3xl font-bold tracking-tight">Agents terrain</h1>
           <p className="text-muted-foreground">Gestion des agents de maintenance et supervision</p>
         </div>
-        <Button>
-          <Plus className="mr-2 h-4 w-4" />
-          Nouvel agent
-        </Button>
+        <Dialog open={showNewAgentDialog} onOpenChange={setShowNewAgentDialog}>
+          <DialogTrigger asChild>
+            <Button onClick={() => setShowNewAgentDialog(true)}>
+              <Plus className="mr-2 h-4 w-4" />
+              Nouvel agent
+            </Button>
+          </DialogTrigger>
+          <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
+            <DialogHeader>
+              <DialogTitle>Créer un nouvel agent</DialogTitle>
+              <DialogDescription>Remplissez les informations pour créer un nouvel agent terrain</DialogDescription>
+            </DialogHeader>
+
+            <div className="space-y-4">
+              {error && (
+                <Alert variant="destructive">
+                  <AlertDescription>{error}</AlertDescription>
+                </Alert>
+              )}
+              
+              {success && (
+                <Alert>
+                  <AlertDescription>{success}</AlertDescription>
+                </Alert>
+              )}
+
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <Label htmlFor="username">Nom d'utilisateur *</Label>
+                  <Input
+                    id="username"
+                    value={newAgent.username}
+                    onChange={(e) => handleInputChange("username", e.target.value)}
+                    placeholder="nom.utilisateur"
+                    required
+                  />
+                </div>
+                <div>
+                  <Label htmlFor="email">Email *</Label>
+                  <Input
+                    id="email"
+                    type="email"
+                    value={newAgent.email}
+                    onChange={(e) => handleInputChange("email", e.target.value)}
+                    placeholder="user@example.com"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <Label htmlFor="first_name">Prénom *</Label>
+                  <Input
+                    id="first_name"
+                    value={newAgent.first_name}
+                    onChange={(e) => handleInputChange("first_name", e.target.value)}
+                    placeholder="Prénom"
+                    required
+                  />
+                </div>
+                <div>
+                  <Label htmlFor="last_name">Nom *</Label>
+                  <Input
+                    id="last_name"
+                    value={newAgent.last_name}
+                    onChange={(e) => handleInputChange("last_name", e.target.value)}
+                    placeholder="Nom"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <Label htmlFor="phone_number">Numéro de téléphone *</Label>
+                  <Input
+                    id="phone_number"
+                    value={newAgent.phone_number}
+                    onChange={(e) => handleInputChange("phone_number", e.target.value)}
+                    placeholder="+33 6 12 34 56 78"
+                    required
+                  />
+                </div>
+                <div>
+                  <Label htmlFor="organization">Organisation</Label>
+                  <Input
+                    id="organization"
+                    value={newAgent.organization}
+                    onChange={(e) => handleInputChange("organization", e.target.value)}
+                    placeholder="Nom de l'organisation"
+                  />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <Label htmlFor="language">Langue</Label>
+                  <Select value={newAgent.language} onValueChange={(value) => handleInputChange("language", value)}>
+                    <SelectTrigger>
+                      <SelectValue />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="fr">Français</SelectItem>
+                      <SelectItem value="en">English</SelectItem>
+                      <SelectItem value="ar">العربية</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+                <div>
+                  <Label htmlFor="password">Mot de passe *</Label>
+                  <Input
+                    id="password"
+                    type="password"
+                    value={newAgent.password}
+                    onChange={(e) => handleInputChange("password", e.target.value)}
+                    placeholder="Mot de passe"
+                    required
+                  />
+                </div>
+              </div>
+            </div>
+
+            <DialogFooter>
+              <Button variant="outline" onClick={() => setShowNewAgentDialog(false)} disabled={loading}>
+                Annuler
+              </Button>
+              <Button onClick={handleCreateAgent} disabled={loading}>
+                {loading ? (
+                  <>
+                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                    Création...
+                  </>
+                ) : (
+                  "Créer l'agent"
+                )}
+              </Button>
+            </DialogFooter>
+          </DialogContent>
+        </Dialog>
       </div>
 
       {/* Statistiques rapides */}

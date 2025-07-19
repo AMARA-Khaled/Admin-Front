@@ -10,6 +10,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Checkbox } from "@/components/ui/checkbox"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
+import { AppSidebar } from "@/components/app-sidebar"
 import {
   Dialog,
   DialogContent,
@@ -138,6 +139,8 @@ export default function RapportsPage() {
   }
 
   return (
+    <>
+    <AppSidebar />
     <div className="flex-1 space-y-6 p-6">
       <div className="flex items-center justify-between">
         <div>
@@ -503,7 +506,7 @@ export default function RapportsPage() {
                       </TableCell>
                       <TableCell>
                         <div className="space-y-1">
-                          {rapport.destinataires.map((dest, index) => (
+                          {rapport.destinataires.map((dest: string, index: number) => (
                             <div key={index} className="text-sm flex items-center">
                               <Mail className="mr-1 h-3 w-3" />
                               {dest}
@@ -576,6 +579,6 @@ export default function RapportsPage() {
           </DialogFooter>
         </DialogContent>
       </Dialog>
-    </div>
+    </div></>
   )
 }

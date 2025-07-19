@@ -1,18 +1,5 @@
 [
-  {
-    "id": "AG-001",
-    "nom": "Ahmed Ben Ali",
-    "email": "ahmed.benali@aquamonitor.com",
-    "telephone": "+216 98 123 456",
-    "statut": "disponible",
-    "zone": "Zone Nord",
-    "specialite": "Maintenance capteurs",
-    "experience": "5 ans",
-    "derniereMission": "2024-01-14",
-    "avatar": "/placeholder.svg?height=32&width=32",
-    "localisation": "Tunis, Tunisie",
-    "competences": ["pH", "Température", "Oxygène"]
-  },
+  
   {
     "id": "AG-002",
     "nom": "Fatima Zahra",

@@ -43,6 +43,7 @@ export function BassinAddDialog({ open, onOpenChange, onSuccess }: BassinAddDial
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState("")
   const [success, setSuccess] = useState(false)
+  const [showMap, setShowMap] = useState(false)
 
   // Map click handler
   function MapClickHandler() {
@@ -50,6 +51,7 @@ export function BassinAddDialog({ open, onOpenChange, onSuccess }: BassinAddDial
     useMapEvents({
       click(e) {
         setForm(f => ({ ...f, latitude: e.latlng.lat, longitude: e.latlng.lng }))
+        setShowMap(false)
       }
     })
     return null
@@ -144,19 +146,25 @@ export function BassinAddDialog({ open, onOpenChange, onSuccess }: BassinAddDial
             </label>
           </div>
           <div className="mb-2">
-            <div className="mb-1 text-sm text-gray-700">Cliquez sur la carte pour choisir l'emplacement :</div>
-            <div style={{ height: 220, width: "100%", borderRadius: 8, overflow: "hidden" }}>
-              {typeof window !== "undefined" && (
-                <MapContainer center={[form.latitude || 34, form.longitude || -6]} zoom={5} style={{ height: "100%", width: "100%" }}>
-                  <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-                  <MapClickHandler />
-                  {form.latitude && form.longitude ? (
-                    <Marker position={[form.latitude, form.longitude]} />
-                  ) : null}
-                </MapContainer>
-              )}
+            <Button type="button" variant="outline" onClick={() => setShowMap(true)}>
+              Pin location on map
+            </Button>
+            <div className="text-xs mt-1 text-gray-500">
+              Lat: {form.latitude}, Lng: {form.longitude}
             </div>
-            <div className="text-xs mt-1 text-gray-500">Lat: {form.latitude}, Lng: {form.longitude}</div>
+            {showMap && (
+              <div className="mt-2 mb-2" style={{ height: 220, width: "100%", borderRadius: 8, overflow: "hidden" }}>
+                {typeof window !== "undefined" && (
+                  <MapContainer center={[form.latitude || 34, form.longitude || -6]} zoom={5} style={{ height: "100%", width: "100%" }}>
+                    <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+                    <MapClickHandler />
+                    {form.latitude && form.longitude ? (
+                      <Marker position={[form.latitude, form.longitude]} />
+                    ) : null}
+                  </MapContainer>
+                )}
+              </div>
+            )}
           </div>
           {error && <div className="text-red-600 text-sm mt-1">{error}</div>}
           {success && <div className="text-green-600 text-sm mt-1">Bassin ajouté avec succès !</div>}

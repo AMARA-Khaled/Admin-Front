@@ -1,8 +1,16 @@
 "use client";
 import dynamic from "next/dynamic";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
+import { LoadingSpinner } from "@/components/ui/loading-spinner";
 
-const MapCard = dynamic(() => import("@/components/map-card"), { ssr: false });
+const MapCard = dynamic(() => import("@/components/map-card"), { 
+  ssr: false,
+  loading: () => (
+    <div className="h-80 flex items-center justify-center">
+      <LoadingSpinner text="Chargement de la carte..." />
+    </div>
+  )
+});
 
 export default function DashboardMapSection() {
   return (

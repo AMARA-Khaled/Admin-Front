@@ -1,15 +1,19 @@
 import type { ReactNode } from "react"
 import { Inter } from "next/font/google"
 import "../globals.css"
+import { ThemeProvider } from "@/components/theme-provider"
+import { LanguageProvider } from "@/components/language-provider"
+import { Toaster } from "@/components/ui/toaster"
 
 const inter = Inter({ subsets: ["latin"] })
 
 export default function LoginLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="fr">
-      <body className={inter.className} style={{ minHeight: "100vh", minWidth: "100vw" }}>
+    <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
+      <LanguageProvider>
         {children}
-      </body>
-    </html>
+        <Toaster />
+      </LanguageProvider>
+    </ThemeProvider>
   )
 } 

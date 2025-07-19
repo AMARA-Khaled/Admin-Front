@@ -20,8 +20,8 @@ const systemStatus = {
 
 export default function Dashboard() {
   return (
-    <div className="flex-1">
-        <AppSidebar />
+    <>
+      <AppSidebar />
       <MobileHeader title="Tableau de bord" />
       <div className="space-y-6 p-4 lg:p-6">
         <div className="hidden lg:block">
@@ -109,6 +109,6 @@ export default function Dashboard() {
           </CardContent>
         </Card>
       </div>
-    </div>
+    </>
   )
 }

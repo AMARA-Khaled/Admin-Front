@@ -18,6 +18,7 @@ import {
 } from "lucide-react"
 import { useTheme } from "next-themes"
 import { useLanguage } from "@/components/language-provider"
+import { RoutePrefetcher } from "@/components/route-prefetcher"
 
 import {
   DropdownMenu,
@@ -111,18 +112,19 @@ function SidebarContent() {
             {menuItems.map((item) => {
               const isActive = pathname === item.url || (item.url !== "/" && pathname.startsWith(item.url))
               return (
-                <Link
-                  key={item.url}
-                  href={item.url}
-                  className={`flex items-center gap-3 rounded-lg px-3 py-2 text-sm transition-colors hover:bg-sidebar-accent hover:text-sidebar-accent-foreground ${
-                    isActive
-                      ? "bg-sidebar-accent text-sidebar-accent-foreground font-medium"
-                      : "text-sidebar-foreground"
-                  }`}
-                >
-                  <item.icon className="h-4 w-4" />
-                  <span>{t(item.titleKey)}</span>
-                </Link>
+                <RoutePrefetcher key={item.url} href={item.url}>
+                  <Link
+                    href={item.url}
+                    className={`flex items-center gap-3 rounded-lg px-3 py-2 text-sm transition-colors hover:bg-sidebar-accent hover:text-sidebar-accent-foreground ${
+                      isActive
+                        ? "bg-sidebar-accent text-sidebar-accent-foreground font-medium"
+                        : "text-sidebar-foreground"
+                    }`}
+                  >
+                    <item.icon className="h-4 w-4" />
+                    <span>{t(item.titleKey)}</span>
+                  </Link>
+                </RoutePrefetcher>
               )
             })}
           </nav>
@@ -166,7 +168,7 @@ function SidebarContent() {
           </DropdownMenuTrigger>
           <DropdownMenuContent side="top" className="w-[--radix-popper-anchor-width]">
             <DropdownMenuItem onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
-              {theme === "dark" ?  <Moon className="mr-2 h-4 w-4" /> : <Sun className="mr-2 h-4 w-4" />}
+              {theme === "dark" ?   <Sun className="mr-2 h-4 w-4" /> : <Moon className="mr-2 h-4 w-4" />}
               {theme === "dark" ? "Mode clair" : "Mode sombre"}
             </DropdownMenuItem>
             <DropdownMenuSeparator />
