@@ -94,44 +94,7 @@ export default function AgentsPage() {
   })
 
   const handleCreateAgent = async () => {
-    setLoading(true)
-    setError("")
-    setSuccess("")
     
-    try {
-      const response = await axios.post("http://localhost/api/v1/auth/register", newAgent)
-      
-      // Add the new agent to the local state
-      const createdAgent = response.data
-      setAgents(prev => [...prev, {
-        id: createdAgent.id.toString(),
-        nom: `${createdAgent.first_name} ${createdAgent.last_name}`,
-        email: createdAgent.email,
-        telephone: createdAgent.phone_number,
-        statut: "disponible",
-        zone: "À assigner",
-        specialite: "Nouveau",
-        missionActuelle: null,
-        avatar: null
-      }])
-      
-      setSuccess("Agent créé avec succès!")
-      setShowNewAgentDialog(false)
-      setNewAgent({
-        username: "",
-        email: "",
-        first_name: "",
-        last_name: "",
-        phone_number: "",
-        organization: "",
-        language: "fr",
-        password: ""
-      })
-    } catch (err: any) {
-      setError(err.response?.data?.detail || "Erreur lors de la création de l'agent")
-    } finally {
-      setLoading(false)
-    }
   }
 
   const handleInputChange = (field: string, value: string) => {

@@ -24,28 +24,7 @@ export default function LoginPage() {
   const { theme, setTheme } = useTheme()
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setLoading(true)
-    setError("")
-    try {
-      // @ts-ignore: No type definitions for 'qs'
-      const response = await axios.post(
-        "http://localhost:8000/api/v1/auth/login",
-        qs.stringify({ username, password }),
-        {
-          headers: {
-            "Content-Type": "application/x-www-form-urlencoded",
-          },
-        },
-      )
-      const { access_token, user } = response.data
-      localStorage.setItem("access_token", access_token)
-      localStorage.setItem("user", JSON.stringify(user))
-      await router.push("/dashboard")
-    } catch (err: any) {
-      setError(t("login.error") || "Nom d'utilisateur ou mot de passe incorrect.")
-      setLoading(false)
-    }
+    
   }
 
   return (
