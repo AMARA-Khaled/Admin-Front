@@ -31,33 +31,7 @@ export function AddAgentDialog({ open, onOpenChange, onSuccess }: AddAgentDialog
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setLoading(true)
-    setError("")
-    setSuccess(false)
-    try {
-      await axios.post("http://localhost:8000/api/v1/auth/register", form)
-      setSuccess(true)
-      if (onSuccess) onSuccess()
-      setTimeout(() => {
-        onOpenChange(false)
-        setSuccess(false)
-        setForm({
-          username: "",
-          email: "",
-          first_name: "",
-          last_name: "",
-          phone_number: "",
-          organization: "",
-          language: "fr",
-          password: ""
-        })
-      }, 1200)
-    } catch (err: any) {
-      setError(err.response?.data?.detail?.[0]?.msg || "Erreur lors de l'ajout de l'agent.")
-    } finally {
-      setLoading(false)
-    }
+    
   }
 
   return (

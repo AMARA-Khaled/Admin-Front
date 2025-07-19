@@ -66,50 +66,7 @@ export function BassinAddDialog({ open, onOpenChange, onSuccess }: BassinAddDial
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setLoading(true)
-    setError("")
-    setSuccess(false)
-    try {
-      await axios.post("http://localhost:8000/api/v1/bassins", {
-        ...form,
-        capacity: Number(form.capacity),
-        depth: Number(form.depth),
-        surface_area: Number(form.surface_area),
-        fish_count: Number(form.fish_count),
-        latitude: Number(form.latitude),
-        longitude: Number(form.longitude),
-        alert_config: {},
-      })
-      setSuccess(true)
-      if (onSuccess) onSuccess()
-      setTimeout(() => {
-        onOpenChange(false)
-        setSuccess(false)
-        setForm({
-          name: "",
-          description: "",
-          capacity: 1,
-          depth: 1,
-          surface_area: 1,
-          location_name: "",
-          latitude: 0,
-          longitude: 0,
-          fish_species: "",
-          fish_count: 0,
-          stocking_date: new Date().toISOString().slice(0, 10),
-          aeration_system: false,
-          filtration_system: false,
-          heating_system: false,
-          manager_contact: "",
-          alert_config: {}
-        })
-      }, 1200)
-    } catch (err: any) {
-      setError(err.response?.data?.detail?.[0]?.msg || "Erreur lors de l'ajout du bassin.")
-    } finally {
-      setLoading(false)
-    }
+    
   }
 
   return (
