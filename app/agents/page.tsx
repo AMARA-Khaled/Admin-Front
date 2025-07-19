@@ -24,7 +24,6 @@ import { useLanguage } from "@/components/language-provider"
 import { Search, Plus, Users, UserCheck, WifiOff, MapPin, Phone, Mail, UserPlus, Loader2 } from "lucide-react"
 import { loadFakeData } from "@/utils/fakeData"
 import { AppSidebar } from "@/components/app-sidebar"
-import axios from "axios"
 
 const getStatusBadge = (statut: string) => {
   switch (statut) {

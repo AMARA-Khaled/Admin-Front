@@ -2,7 +2,6 @@
 
 import type React from "react"
 import { useState } from "react"
-import axios from "axios"
 import { useRouter } from "next/navigation"
 import qs from "qs"
 import { Card, CardContent, CardHeader, CardFooter } from "@/components/ui/card"

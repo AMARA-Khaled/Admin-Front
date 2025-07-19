@@ -3,7 +3,6 @@ import React, { useState } from "react"
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter } from "@/components/ui/dialog"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
-import axios from "axios"
 import dynamic from "next/dynamic"
 
 // Dynamically import MapContainer and Marker to avoid SSR issues

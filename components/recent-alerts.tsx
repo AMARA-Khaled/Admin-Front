@@ -4,21 +4,7 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { AlertTriangle, AlertCircle, Info, Clock, ArrowRight } from "lucide-react"
-import axios from 'axios';
-
-axios.get("http://localhost:8000/api/v1/alerts", {
-  headers: {
-    "Content-Type": "application/json",
-    "Authorization": `Bearer ${localStorage.getItem("access_token")}`
-  }
-})
-  .then(response => {
-    const alerts = response.data;
-  })
-  .catch(error => {
-    console.error('Error fetching data:', error);
-  });
-
+import alertesData from "@/data/alertes.json"
 
 
 const getAlertIcon = (type: string) => {
@@ -48,21 +34,8 @@ const getAlertColor = (type: string) => {
 }
 
 export function RecentAlerts() {
-  const [alerts, setAlerts] = useState<any[]>([])
-  useEffect(() => {
-    axios.get("http://localhost:8000/api/v1/alerts", {
-      headers: {
-        "Content-Type": "application/json",
-        "Authorization": `Bearer ${localStorage.getItem("access_token")}`
-      }
-    })
-    .then(response => {
-      const alerts = response.data;
-    })
-    .catch(error => {
-      console.error('Error fetching data:', error);
-    });
-  }, [])
+  const [alerts] = useState<any[]>(alertesData)
+  // Remove useEffect and axios usage
 
   return (
     <ScrollArea className="h-[300px]">
